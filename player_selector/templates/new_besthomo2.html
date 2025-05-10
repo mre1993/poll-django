@@ -53,6 +53,12 @@
 </head>
 <body>
     <div class="container">
+        <form method="post" action="{% url 'logout' %}" style="text-align: right; margin-bottom: 10px;">
+            {% csrf_token %}
+            <button type="submit" style="background-color: #dc3545; border: none; color: white; padding: 5px 10px; border-radius: 4px; cursor: pointer;">
+                Logout
+            </button>
+        </form>
         <h1>Select Specific Options</h1>
         <form method="post">
             {% csrf_token %}
