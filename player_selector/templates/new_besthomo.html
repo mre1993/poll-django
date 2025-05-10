@@ -53,6 +53,18 @@
 </head>
 <body>
     <div class="container">
+        <form method="post" action="{% url 'logout' %}" style="text-align: right; margin-bottom: 10px;">
+            {% csrf_token %}
+            <button type="submit" style="
+                background-color: #dc3545;
+                border: none;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.9em;
+            ">Logout</button>
+        </form>
         <h1>Add a New Best Homo</h1>
         <form method="post">
             {% csrf_token %}
