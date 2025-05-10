@@ -1,6 +1,20 @@
 from django import forms
 from .models import BestHomo, Place, Time, Field
+from django import forms
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
 
+class CustomRegisterForm(UserCreationForm):
+    email = forms.EmailField()
+    phone_number = forms.CharField(max_length=20)
+    about_me = forms.CharField(max_length=255)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'phone_number', 'about_me', 'first_name', 'last_name', 'password1', 'password2']
+
+class CustomLoginForm(AuthenticationForm):
+    pass
 
 class VoteForm(forms.Form):
     player = forms.ModelChoiceField(
