@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import User
+from django.contrib.auth.models import User
 
 class Place(models.Model):
     name = models.CharField(max_length=255)
